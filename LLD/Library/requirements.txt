@@ -1,0 +1,18 @@
+
+Book:
+    Id,
+    Name,
+    Author
+    
+Magazine:
+    Id,
+    Name,
+    Issue
+
+Lookup by:
+    Id,
+    Author
+    Title
+
+Register by:
+    Id
