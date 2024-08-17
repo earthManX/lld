@@ -8,6 +8,7 @@ public class Book extends Artifact{
         this.author = author;
         super.id = id;
         super.name = name;
+        super.isRented = false;
     }
 
 

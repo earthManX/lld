@@ -7,11 +7,13 @@ public class Library {
     Map<String, Artifact> idMap;
     Map<String, List<Book>> authorMap;
     Map<String, List<Artifact>> nameMap;
+    ReservationSystem reservationSystem;
 
     Library(){
         idMap = new HashMap<>();
         authorMap = new HashMap<>();
         nameMap = new HashMap<>();
+        reservationSystem = new ReservationSystem();
     }
 
     public void registerBook( String name, String id, String author){
@@ -47,6 +49,22 @@ public class Library {
             return Optional.of(idMap.getOrDefault(id, null));
         }
         return Optional.empty();
+    }
+
+    public void reserveArtifact(String id, String fromDate, String toDate){
+        reservationSystem.addReservation(id, fromDate, toDate);
+    }
+
+    public String checkAvailability(String id){
+        StringBuilder builder = new StringBuilder();
+        reservationSystem.getReservations(id).stream()
+        .map(s -> s[0] + " to " + s[1] )
+        .forEach( s -> builder.append(";").append(s));
+        return builder.toString();
+    }
+
+    public void returnArtifact( String id){
+        reservationSystem.returnArtifact( id, "time" );
     }
 
 }

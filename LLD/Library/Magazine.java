@@ -8,5 +8,6 @@ public class Magazine extends Artifact {
         super.name = name;
         super.id = id;
         this.issue = issue;
+        super.isRented = false;
     }
 }
