@@ -1,0 +1,8 @@
+
+Factory - When we want to instantiate a certain types of objects without the client being bothered about the specifics of instantiation.
+AbstractFactory - When we want to instantiate certain families of objects.
+Decorator - When we want to layer behaviours.
+Observer - Pub-sub model.
+State - When certain behaviours of a system change upon change in its state.
+Strategy - When multiple implementations (algorithms) of a behaviour are available in the system.
+Composite - When object hierarchy can be treated as a tree with simple and complex objects having similar behaviour.
